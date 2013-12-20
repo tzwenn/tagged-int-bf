@@ -1,2 +1,6 @@
 targetbf-c*
+.*.swp
+.*.swo
+*~
 *.pyc
+boxedintegers-c*
