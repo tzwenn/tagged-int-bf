@@ -75,10 +75,10 @@ def mainloop(program, bracket_map):
 class W_SmallInteger(object):
     
     _attrs_ = ['value']
-    __slots__ = ('value',)     # the only allowed slot here
+    __slots__ = 'value'     # the only allowed slot here
     _immutable_fields_ = ["value"]
         
-    def __init__(self, value = 0):
+    def __init__(self, value):
         self.value = value
 
 def unboxInt(w_smallIntObject):
@@ -86,7 +86,7 @@ def unboxInt(w_smallIntObject):
 
 class Tape(object):
     def __init__(self):
-        self.thetape = [W_SmallInteger()]
+        self.thetape = [W_SmallInteger(0)]
         self.position = 0
 
     def get(self):
@@ -102,7 +102,7 @@ class Tape(object):
     def advance(self):
         self.position += 1
         if len(self.thetape) <= self.position:
-            self.thetape.append(W_SmallInteger())
+            self.thetape.append(W_SmallInteger(0))
     def devance(self):
         self.position -= 1
 
