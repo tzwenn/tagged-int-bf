@@ -1,6 +1,7 @@
 targetbf-c*
 boxedintegers-c*
 taggedintegers-c*
+c-sources
 .*.swp
 .*.swo
 *~
